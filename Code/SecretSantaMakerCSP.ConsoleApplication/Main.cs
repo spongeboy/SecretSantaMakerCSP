@@ -11,7 +11,9 @@ namespace SecretSantaMakerCSP.ConsoleApplication
         static void Main(string[] args)
         {
 
-            SingleSolution.Get();
+            //SingleSolution.Get();
+
+            ProposedSolution.Get();
 
             //IterateSolutions.Get();
 

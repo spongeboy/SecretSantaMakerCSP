@@ -9,16 +9,13 @@ using System.Threading.Tasks;
 
 namespace SecretSantaMakerCSP.ConsoleApplication
 {
-    public static class SingleSolution
+    public static class ProposedSolution
     {
         public static void Get()
         {
 
-            var s = new SecretSantaMakerCSP.DrawMaker();
-
             SecretSantaDraw r;
-            r = s.MakeNextDraw(BaileyTestData.GetFamilies(), BaileyTestData.GetPreviousDraws());
-            //r = s.MakeNextDraw(MaleBuffoonCartoonTestData.GetFamilies(), MaleBuffoonCartoonTestData.GetPreviousDraws());
+            r = new SecretSantaDraw("Proposed 2015", BaileyTestData.cd2015);
 
             if (r != null)
             {

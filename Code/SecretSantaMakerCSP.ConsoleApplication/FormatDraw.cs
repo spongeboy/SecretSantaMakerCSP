@@ -82,5 +82,59 @@ namespace SecretSantaMakerCSP.ConsoleApplication
             return sb.ToString();
         }
 
+        public static string GetRevealJsFormat(SecretSantaDraw s)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string seedPerson = s.Draw.First().Key;
+
+            string giftGiver = seedPerson;
+            string recipient = s.Draw[giftGiver];
+
+
+            int count = 0;
+            int pageSize = 7;
+            
+
+            //Print out chain, relies on "Make circuit" constraint
+            while (true)
+            {
+
+
+                if (count % pageSize == 0)
+                {
+                    sb.AppendFormat("<section id='draw{0}'>", (count / pageSize) + 1);
+                    sb.AppendFormat("<p><span>{0}</span><span class='fragment'> buys for...</span></p>", giftGiver, recipient);
+                    sb.AppendLine();
+                }
+                else
+                {
+                    sb.AppendFormat("<p><span class='fragment'>{0}</span><span class='fragment'> buys for...</span></p>", giftGiver, recipient);
+                    sb.AppendLine();
+                }
+
+                giftGiver = recipient;
+                recipient = s.Draw[giftGiver];
+
+                if (giftGiver == seedPerson)
+                {
+                    sb.Append("</section>");
+                    break;
+                }
+
+                if (count % pageSize == pageSize - 1)
+                {
+                    sb.Append("</section>");
+                }
+
+
+                count++;
+            }
+
+            return sb.ToString();
+        }
+
+
+
     }
 }
