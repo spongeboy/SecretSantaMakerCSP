@@ -195,3 +195,4 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 Code/SecretSantaMakerCSP/Data/BaileyTestData.cs
+Code/SecretSantaMakerCSP.UnitTests/BaileyUnitTests.cs
