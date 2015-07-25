@@ -9,27 +9,36 @@ using System.Threading.Tasks;
 
 namespace SecretSantaMakerCSP.ConsoleApplication
 {
-    class Program
+    public static class SingleSolution
     {
-        static void Main(string[] args)
+        public static void Get()
         {
 
             var s = new SecretSantaMakerCSP.DrawMaker();
 
             SecretSantaDraw r;
             r = s.MakeNextDraw(BaileyTestData.GetFamilies(), BaileyTestData.GetPreviousDraws());
-            r = s.MakeNextDraw(MaleBuffoonCartoonTestData.GetFamilies(), MaleBuffoonCartoonTestData.GetPreviousDraws());
+            //r = s.MakeNextDraw(MaleBuffoonCartoonTestData.GetFamilies(), MaleBuffoonCartoonTestData.GetPreviousDraws());
 
             if (r != null)
             {
                 Console.WriteLine(r.Title);
+
+                Console.WriteLine(FormatDraw.GetFullDescription(r));
+
+                Console.WriteLine("======================");
+
+                Console.WriteLine(FormatDraw.GetChain(r));
+
+                Console.WriteLine("======================");
+
+                Console.WriteLine(FormatDraw.GetCSharpDataFormat(r));
+
             }
             else
             {
                 Console.WriteLine("No draw found.");
             }
-
-            Console.ReadKey();
 
 
         }
