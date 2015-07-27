@@ -15,7 +15,8 @@ namespace SecretSantaMakerCSP.ConsoleApplication
         {
 
             SecretSantaDraw r;
-            r = new SecretSantaDraw("Proposed 2015", BaileyTestData.cd2015);
+            //r = new SecretSantaDraw("Proposed 2015", BaileyTestData.cd2015);
+            r = new SecretSantaDraw("Test", new Dictionary<string, string>());
 
             if (r != null)
             {

@@ -17,8 +17,8 @@ namespace SecretSantaMakerCSP.ConsoleApplication
             var s = new SecretSantaMakerCSP.DrawMaker();
 
             SecretSantaDraw r;
-            r = s.MakeNextDraw(BaileyTestData.GetFamilies(), BaileyTestData.GetPreviousDraws());
-            //r = s.MakeNextDraw(MaleBuffoonCartoonTestData.GetFamilies(), MaleBuffoonCartoonTestData.GetPreviousDraws());
+            //r = s.MakeNextDraw(BaileyTestData.GetFamilies(), BaileyTestData.GetPreviousDraws());
+            r = s.MakeNextDraw(MaleBuffoonCartoonTestData.GetFamilies(), MaleBuffoonCartoonTestData.GetPreviousDraws());
 
             if (r != null)
             {
