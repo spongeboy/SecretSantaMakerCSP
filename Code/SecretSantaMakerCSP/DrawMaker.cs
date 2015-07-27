@@ -73,6 +73,11 @@ namespace SecretSantaMakerCSP
 
                 }
 
+                //Constraints based on potential solutions
+
+                //TODO - Partners don't buy for other partners
+
+
             }
 
             //Custom constraints
