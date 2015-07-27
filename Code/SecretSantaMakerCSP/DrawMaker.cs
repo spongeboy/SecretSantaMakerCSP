@@ -31,7 +31,6 @@ namespace SecretSantaMakerCSP
             // Constraints
             //
             solver.Add(santas.AllDifferent());
-            solver.Add(solver.MakeCircuit(santas));
 
             foreach (int i in RANGE)
             {
@@ -80,15 +79,17 @@ namespace SecretSantaMakerCSP
 
             }
 
-            //Custom constraints
-            solver.Add(CantBuyFor("Evan", "Suzanne", AllNames, santas));
-            solver.Add(CantBuyFor("Evan", "Deb", AllNames, santas));
+            solver.Add(solver.MakeCircuit(santas));
 
-            solver.Add(CantBuyFor("Suzanne", "Deb", AllNames, santas));
-            solver.Add(CantBuyFor("Suzanne", "Evan", AllNames, santas));
+            ////Custom constraints
+            //solver.Add(CantBuyFor("Homer", "Fred", AllNames, santas));
+            //solver.Add(CantBuyFor("Homer", "Peter", AllNames, santas));
 
-            solver.Add(CantBuyFor("Deb", "Evan", AllNames, santas));
-            solver.Add(CantBuyFor("Deb", "Suzanne", AllNames, santas));
+            //solver.Add(CantBuyFor("Peter", "Homer", AllNames, santas));
+            //solver.Add(CantBuyFor("Peter", "Fred", AllNames, santas));
+
+            //solver.Add(CantBuyFor("Fred", "Homer", AllNames, santas));
+            //solver.Add(CantBuyFor("Fred", "Peter", AllNames, santas));
 
             //
             // Search

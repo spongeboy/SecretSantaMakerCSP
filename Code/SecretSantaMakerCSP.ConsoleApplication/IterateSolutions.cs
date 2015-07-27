@@ -16,14 +16,13 @@ namespace SecretSantaMakerCSP.ConsoleApplication
             var s = new SecretSantaMakerCSP.DrawMaker();
 
             SecretSantaDraw r;
-            //r = s.MakeNextDraw(BaileyTestData.GetFamilies(), BaileyTestData.GetPreviousDraws());
 
-            var families = BaileyTestData.GetFamilies();
+            //var families = BaileyTestData.GetFamilies();
             //var previousDraws = BaileyTestData.GetPreviousDraws();
-            var previousDraws = BaileyTestData.GetPreviousHandmadeDraws();
+            //var previousDraws = BaileyTestData.GetPreviousHandmadeDraws();
 
-            //var families = MaleBuffoonCartoonTestData.GetFamilies();
-            //var previousDraws = MaleBuffoonCartoonTestData.GetPreviousDraws();
+            var families = MaleBuffoonCartoonTestData.GetFamilies();
+            var previousDraws = MaleBuffoonCartoonTestData.GetPreviousDraws();
 
             int max = 10;
             for (int i = 0; i < max; i++)
@@ -31,10 +30,19 @@ namespace SecretSantaMakerCSP.ConsoleApplication
                 r = s.MakeNextDraw(families, previousDraws);
                 if (r != null)
                 {
-                    Console.WriteLine(FormatDraw.GetShortDescription(r));
-                } else
+                    Console.WriteLine("======================================");
+                    Console.WriteLine(string.Format("Solution number:{0}", i + 1));
+                    Console.WriteLine("======================================");
+
+                    Console.WriteLine(FormatDraw.GetChain(r));
+
+                    Console.ReadKey();
+                }
+                else
                 {
+                    Console.WriteLine("======================================");
                     Console.WriteLine("No draw found.");
+                    Console.WriteLine("======================================");
                     break;
                 }
 
